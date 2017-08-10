@@ -11,3 +11,4 @@ public interface CustomerDAO {
 	public Customer findByCustomerId(int customerId);
 	public int editCustomerDetails(Customer customer);
 	public int deleteCustomer(int customerId);
+}

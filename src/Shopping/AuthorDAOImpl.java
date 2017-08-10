@@ -10,7 +10,7 @@ import java.util.List;
 import Shopping.beans.Author;
 import jdbc.DBUtil;
 
-public class AthorDAOImpl implements AuthorDAO {
+public class AuthorDAOImpl implements AuthorDAO {
 	// Beans/POJO/DO
 	// Plain Old Java Object
 	// Data Object
@@ -20,7 +20,7 @@ public class AthorDAOImpl implements AuthorDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		int result = 0;
-		String query = "insert into authors values (?,?)"; // question mark is a
+		String query = "insert into author values (?,?)"; // question mark is a
 															// placeholder start
 															// with 1
 		// String normalQuery = "insert into authors values
