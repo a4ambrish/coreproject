@@ -1,1 +1,41 @@
-this is a new file.
+--CRUD - Create/Restrive/Update/Delete
+--MIS Following reports
+-- print report to display/get most sold books(since inception till current date)
+-- print report to display/get most sold author ( in running month)
+-- print report to display office hours ( 8:00 AM - 5:00 PM )/non office ( rest time) hourse  wise sale report
+-- print shop catalog
+-- print customer details who have not purchased anything till the given date
+
+
+select odbookid,count(*) from orderdetail group by odbookid having count(*) =  (
+
+select max(c1) from (
+select count(*) c1 from orderdetail group by odbookid 
+) t 
+
+) order by 1
+
+select * from orderdetail 
+select * from book 
+
+select * from "order"
+left join book on ( bauthid = authorid)
+
+
+
+select * from author 
+left join book on ( bauthid = authorid)
+ join orderdetail on (odbookid = bookid) group by authorid 
+
+
+select authorid, sum(orderqty) from author 
+ join book on ( bauthid = authorid)
+ join 
+
+ (
+select od.* from orderdetail od left join "order" o  on(od.orderid = o.orderid) where date_part('month', o.orderdate) = date_part('month', current_timestamp)
+ ) t on (t.odbookid = bookid) group by authorid 
+
+ 	select * from "order" where date_part('month', orderdate) = date_part('month', current_timestamp)
+
+ 	select current_timestamp 
